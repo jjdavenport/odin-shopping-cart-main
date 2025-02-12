@@ -1,3 +1,5 @@
+import animateTailwind from "tailwindcss-animate";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
@@ -5,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["geist sans", "sans-serif"],
+        sans: ["geist", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",
@@ -53,7 +55,21 @@ export default {
       borderRadius: {
         DEFAULT: "var(--radius)",
       },
+      keyframes: {
+        "slide-in-right": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        "slide-out-right": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        "slide-in-right": "slide-in-right 0.3s ease-in-out",
+        "slide-out-right": "slide-out-right 0.3s ease-in-out",
+      },
     },
   },
-  plugins: [],
+  plugins: [animateTailwind],
 };
