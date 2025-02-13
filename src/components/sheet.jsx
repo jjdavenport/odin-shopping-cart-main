@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import { Link } from "react-router";
 import Button from "./button";
+import Separator from "./separator";
 
 const Sheet = ({ onClose }) => {
   const [close, setClose] = useState(false);
@@ -9,7 +11,7 @@ const Sheet = ({ onClose }) => {
     setClose(true);
     setTimeout(() => {
       onClose();
-    }, 300);
+    }, 200);
   };
 
   return (
@@ -21,13 +23,23 @@ const Sheet = ({ onClose }) => {
         onClick={handleClose}
       ></div>
       <aside
-        className={`fixed border-l border-border z-50 bg-background right-0 top-0 h-screen w-5/12 p-4 ${
+        className={`fixed border-l border-border z-50 bg-background flex flex-col gap-2 right-0 top-0 h-screen w-full md:w-5/12 p-3 ${
           close ? "animate-slide-out-right" : "animate-slide-in-right"
         }`}
       >
-        <Button onClick={handleClose}>
-          <X />
-        </Button>
+        <div className="flex items-center justify-between">
+          <span className="text-xl">Cart</span>
+          <Button onClick={handleClose}>
+            <X />
+          </Button>
+        </div>
+        <Separator className="bg-border" />
+        <Link
+          to="/checkout"
+          className="w-full bg-foreground text-secondary hover:bg-secondary-foreground flex p-3 rounded-lg justify-center"
+        >
+          Proceed to checkout
+        </Link>
       </aside>
     </>
   );

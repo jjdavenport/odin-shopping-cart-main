@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 
 const useProducts = () => {
-  const fetch = async () => {};
+  const fetch = () => {};
 
-  useEffect(() => {});
+  useEffect(() => {
+    fetch();
+  }, []);
 
   return {};
 };

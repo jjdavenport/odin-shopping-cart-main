@@ -1,7 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 @import "tailwindcss";
 
 @config "../tailwind.config.js";
+
+@font-face {
+  font-family: "geist";
+  src: url(../font/Geist[wght].ttf);
+}
 
 @layer base {
   :root {

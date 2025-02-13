@@ -1,9 +1,9 @@
-const Button = ({ children, onClick }) => {
+const Button = ({ children, onClick, className }) => {
   return (
     <>
       <button
         onClick={onClick}
-        className="text-primary flex items-center cursor-pointer justify-center rounded-lg p-2 hover:bg-button"
+        className={`${className} text-primary  flex items-center cursor-pointer justify-center rounded-lg p-3 hover:bg-button`}
       >
         {children}
       </button>
