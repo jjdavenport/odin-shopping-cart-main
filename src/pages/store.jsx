@@ -1,6 +1,7 @@
 import Wrapper from "../components/wrapper";
 import Header from "../components/header";
 import Separator from "../components/separator";
+import Footer from "../components/footer";
 
 const Store = () => {
   return (
@@ -8,6 +9,7 @@ const Store = () => {
       <Wrapper>
         <Header />
         <Separator className="bg-border" />
+        <Footer />
       </Wrapper>
     </>
   );

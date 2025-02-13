@@ -3,7 +3,7 @@ import { ShoppingBasket, Sun, Moon } from "lucide-react";
 import { Link } from "react-router";
 import Button from "./button";
 import NavButton from "./nav-button";
-import useTheme from "../hooks/useTheme";
+import useTheme from "../hooks/theme-provider";
 import Sheet from "./sheet";
 
 const Nav = () => {
@@ -21,15 +21,15 @@ const Nav = () => {
   return (
     <>
       <nav className="flex gap-4">
-        <Link to="/" className="rounded-lg p-3 flex gap-1 hover:bg-button">
+        <Link to="/" className="hover:bg-button flex gap-1 rounded-lg p-3">
           Home
         </Link>
         <NavButton text="Store" />
-        <Button className="border border-border" onClick={toggleTheme}>
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        <Button className="border-border border" onClick={toggleTheme}>
+          <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+          <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
         </Button>
-        <Button className="border border-border" onClick={toggleSheet}>
+        <Button className="border-border border" onClick={toggleSheet}>
           <ShoppingBasket className="h-[1.2rem] w-[1.2rem]" />
         </Button>
         {sheet && <Sheet onClose={toggleSheet} />}
