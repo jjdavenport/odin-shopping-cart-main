@@ -5,24 +5,31 @@ import "./index.css";
 import Home from "./pages/home";
 import Store from "./pages/store";
 import Checkout from "./pages/checkout";
+import Layout from "./components/layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "store",
-    element: <Store />,
-  },
-  {
-    path: "checkout",
-    element: <Checkout />,
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "store",
+        element: <Store />,
+      },
+      {
+        path: "checkout",
+        element: <Checkout />,
+      },
+    ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
+  </StrictMode>,
 );

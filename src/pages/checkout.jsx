@@ -1,25 +1,26 @@
-import Wrapper from "../components/wrapper";
-import Header from "../components/header";
-import Separator from "../components/separator";
 import Checkbox from "../components/checkbox";
 import Quantity from "../components/quantity";
-import Footer from "../components/footer";
+import Button from "../components/button";
+import { Trash2 } from "lucide-react";
 
 const Checkout = () => {
   return (
     <>
-      <Wrapper>
-        <Header />
-        <Separator className="bg-border" />
-        <div className="flex flex-1 flex-col gap-4 p-4">
+      <div className="flex flex-1 flex-col gap-4 p-4">
+        <div className="flex items-center justify-between">
           <span>Checkout</span>
-          <div className="flex items-center gap-10">
-            <Checkbox />
-            <Quantity />
+          <div className="flex items-center gap-2">
+            <label htmlFor="Delete">Delete</label>
+            <Button>
+              <Trash2 />
+            </Button>
           </div>
         </div>
-        <Footer />
-      </Wrapper>
+        <div className="flex items-center gap-10">
+          <Checkbox />
+          <Quantity />
+        </div>
+      </div>
     </>
   );
 };
