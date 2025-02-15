@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <Separator className="bg-border" />
-      <footer className="w-full flex justify-center p-4">
+      <footer className="flex w-full justify-center p-4">
         <ul className="flex gap-8 text-sm">
           <li>
             <a className="flex gap-1">

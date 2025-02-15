@@ -1,13 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const useProducts = () => {
-  const fetch = () => {};
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("https://fakestoreapi.com/products/");
+      const result = await response.json();
+      setData(result);
+    } catch (error) {
+      setError(error);
+    }
+  };
 
   useEffect(() => {
-    fetch();
+    fetchData();
   }, []);
 
-  return {};
+  return {
+    data,
+  };
 };
 
 export default useProducts;

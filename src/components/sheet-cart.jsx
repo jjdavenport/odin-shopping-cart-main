@@ -13,7 +13,7 @@ const SheetCart = ({ onClick }) => {
           <X />
         </Button>
       </div>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between text-sm">
         <span>Product</span>
         <span>Total</span>
       </div>
@@ -21,12 +21,21 @@ const SheetCart = ({ onClick }) => {
       <div className="flex flex-1 flex-col">
         <Quantity />
       </div>
-      <Link
-        to="/checkout"
-        className="bg-foreground text-secondary hover:bg-secondary-foreground flex w-full justify-center rounded-lg p-3"
-      >
-        Check out
-      </Link>
+      <section className="flex flex-col gap-4 py-4">
+        <Separator className="bg-border" />
+        <div className="flex justify-between text-xl">
+          <span>Total</span>
+          <span>$15.00</span>
+        </div>
+        <button
+          onClick={onClick}
+          className="bg-foreground text-secondary hover:bg-secondary-foreground flex w-full justify-center rounded-lg"
+        >
+          <Link className="w-full p-3" to="/checkout">
+            Check out
+          </Link>
+        </button>
+      </section>
     </>
   );
 };

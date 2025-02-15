@@ -1,5 +1,6 @@
 import { useState } from "react";
 import EmptySheet from "./empty-sheet";
+import SheetCart from "./sheet-cart";
 
 const Sheet = ({ onClose }) => {
   const [close, setClose] = useState(false);
@@ -15,7 +16,7 @@ const Sheet = ({ onClose }) => {
     <>
       <div
         className={`fixed inset-0 z-40 bg-black/50 ${
-          close ? "opacity-0 transition-opacity duration-300" : ""
+          close && "opacity-0 transition-opacity duration-300"
         }`}
         onClick={handleClose}
       ></div>
@@ -24,7 +25,7 @@ const Sheet = ({ onClose }) => {
           close ? "animate-slide-out-right" : "animate-slide-in-right"
         }`}
       >
-        <EmptySheet onClick={handleClose} />
+        <SheetCart onClick={handleClose} />
       </aside>
     </>
   );

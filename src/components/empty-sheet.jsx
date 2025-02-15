@@ -11,12 +11,12 @@ const EmptySheet = ({ onClick }) => {
         </Button>
         <div className="flex w-full flex-1 flex-col items-center justify-center gap-4">
           <span className="text-2xl">Your cart is empty</span>
-          <Link
-            to="/checkout"
+          <Button
+            onClick={onClick}
             className="bg-foreground text-secondary hover:bg-secondary-foreground flex w-7/12 justify-center rounded-lg p-3"
           >
-            Continue Shopping
-          </Link>
+            <Link to="/">Continue Shopping</Link>
+          </Button>
         </div>
       </div>
     </>
