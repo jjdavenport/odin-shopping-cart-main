@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import Store from "./pages/store";
 import Checkout from "./pages/checkout";
 import Layout from "./components/layout";
+import { ToastProvider } from "./hooks/toast-provider";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ToastProvider>
+      <RouterProvider router={router} />
+    </ToastProvider>
   </StrictMode>,
 );

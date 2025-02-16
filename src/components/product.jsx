@@ -1,7 +1,7 @@
 import Button from "./button";
 import { Link } from "react-router";
 
-const Product = ({ img, title, price, href }) => {
+const Product = ({ img, title, price, href, onClick }) => {
   return (
     <>
       <div className="border-border flex flex-col overflow-hidden rounded-lg border">
@@ -16,10 +16,15 @@ const Product = ({ img, title, price, href }) => {
             <Link to={href}>${price}</Link>
           </div>
           <div className="bg-background flex items-center gap-2">
-            <Link className="bg-secondary-foreground text-secondary flex w-full justify-center rounded-lg p-3">
+            <Link
+              to="/checkout"
+              className="bg-secondary-foreground text-secondary flex w-full justify-center rounded-lg p-3"
+            >
               Buy it now
             </Link>
-            <Button className="border-border w-full border">Add to cart</Button>
+            <Button onClick={onClick} className="border-border w-full border">
+              Add to cart
+            </Button>
           </div>
         </div>
       </div>

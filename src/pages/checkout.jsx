@@ -3,12 +3,10 @@ import Checkbox from "../components/checkbox";
 import Quantity from "../components/quantity";
 import Button from "../components/button";
 import { Trash2 } from "lucide-react";
-import Toast from "../components/toast";
 import Dialog from "../components/dialog";
 import Separator from "../components/separator";
 
 const Checkout = () => {
-  const [showToast, setShowToast] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
 
   const show = (setter) => () => {
@@ -34,7 +32,7 @@ const Checkout = () => {
           </div>
           <div className="flex items-center gap-10">
             <Checkbox />
-            <Quantity onClick={show(setShowToast)} />
+            <Quantity />
           </div>
         </div>
         <div className="border-border flex h-fit flex-col gap-2 rounded-lg border p-3">
@@ -51,7 +49,6 @@ const Checkout = () => {
           </Button>
         </div>
       </div>
-      {showToast && <Toast onClose={hide(setShowToast)} />}
       {showDialog && (
         <Dialog onClick={showDialog} onClose={hide(setShowDialog)} />
       )}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Toast = ({ onClose }) => {
+const Toast = ({ onClose, i }) => {
   const [state, setState] = useState("entering");
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const Toast = ({ onClose }) => {
     return () => clearTimeout(timer);
   }, [onClose]);
 
-  const getClasses = () => {
+  const classes = () => {
     switch (state) {
       case "entering":
         return "translate-y-full opacity-0";
@@ -28,9 +28,12 @@ const Toast = ({ onClose }) => {
 
   return (
     <div
-      className={`border-border bg-background fixed right-5 bottom-5 flex h-28 w-96 items-center justify-center rounded-lg border transition-all duration-300 ease-in-out ${getClasses()}`}
+      className={`border-border bg-background fixed right-2 bottom-2 flex h-28 w-96 items-center gap-2 rounded-lg border p-3 transition-all duration-300 ease-in-out ${classes()}`}
     >
-      <span>Added to Cart</span>
+      <div className="flex flex-col gap-1">
+        <span className="text-sm">{i.title}</span>
+        <span>Added to Cart</span>
+      </div>
     </div>
   );
 };
