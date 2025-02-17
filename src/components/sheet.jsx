@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EmptySheet from "./empty-sheet";
 import SheetCart from "./sheet-cart";
 
 const Sheet = ({ onClose }) => {
   const [close, setClose] = useState(false);
+
+  useEffect(() => {
+    !close
+      ? document.documentElement.classList.add("overflow-hidden")
+      : document.documentElement.classList.remove("overflow-hidden");
+  }, [close]);
 
   const handleClose = () => {
     setClose(true);

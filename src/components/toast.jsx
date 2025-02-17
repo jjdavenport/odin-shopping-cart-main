@@ -20,7 +20,7 @@ const Toast = ({ onClose, i }) => {
       case "visible":
         return "translate-y-0 opacity-100";
       case "exiting":
-        return "translate-x-full opacity-0";
+        return "translate-y-full md:translate-x-full opacity-0";
       default:
         return "";
     }
@@ -28,7 +28,7 @@ const Toast = ({ onClose, i }) => {
 
   return (
     <div
-      className={`border-border bg-background fixed right-2 bottom-2 flex h-28 w-96 items-center gap-2 rounded-lg border p-3 transition-all duration-300 ease-in-out ${classes()}`}
+      className={`border-border bg-background fixed right-1 bottom-1 flex h-28 w-[98%] items-center gap-2 rounded-lg border p-3 transition-all duration-300 ease-in-out md:right-2 md:bottom-2 md:w-96 ${classes()}`}
     >
       <div className="flex flex-col gap-1">
         <span className="text-sm">{i.title}</span>

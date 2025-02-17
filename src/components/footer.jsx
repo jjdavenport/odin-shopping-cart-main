@@ -8,25 +8,41 @@ const Footer = () => {
       <footer className="flex w-full justify-center p-4">
         <ul className="flex gap-8 text-sm">
           <li>
-            <a className="flex gap-1">
+            <a
+              target="_blank"
+              href="https://facebook.com"
+              className="flex gap-1"
+            >
               <Facebook className="h-5" />
               <span className="hidden md:flex">Facebook</span>
             </a>
           </li>
           <li className="flex gap-1">
-            <a className="flex gap-1">
+            <a
+              target="_blank"
+              href="https://twitter.com"
+              className="flex gap-1"
+            >
               <Twitter className="h-5" />
               <span className="hidden md:flex">Twitter</span>
             </a>
           </li>
           <li className="flex gap-1">
-            <a className="flex gap-1">
+            <a
+              target="_blank"
+              href="https://instagram.com"
+              className="flex gap-1"
+            >
               <Instagram className="h-5" />
               <span className="hidden md:flex">Instagram</span>
             </a>
           </li>
           <li className="flex gap-1">
-            <a className="flex gap-1">
+            <a
+              target="_blank"
+              href="https://youtube.com"
+              className="flex gap-1"
+            >
               <Youtube className="h-5" />
               <span className="hidden md:flex">Youtube</span>
             </a>

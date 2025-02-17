@@ -11,10 +11,12 @@ const Home = () => {
         {data &&
           data.map((i) => (
             <Product
+              href={`/product/${i.id}`}
               key={i.id}
               img={i.image}
               title={i.title}
               price={i.price}
+              state={{ product: i }}
               onClick={() => addToCart(i.image, i.title, i.price)}
             />
           ))}

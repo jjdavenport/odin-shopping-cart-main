@@ -1,12 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import { ToastProvider } from "./hooks/toast-provider";
 import "./index.css";
 import Home from "./pages/home";
 import Store from "./pages/store";
 import Checkout from "./pages/checkout";
 import Layout from "./components/layout";
-import { ToastProvider } from "./hooks/toast-provider";
+import ProductPage from "./pages/product-page";
 
 const router = createBrowserRouter([
   {
@@ -18,12 +19,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "store",
+        path: "store/:id",
         element: <Store />,
       },
       {
         path: "checkout",
         element: <Checkout />,
+      },
+      {
+        path: "product/:id",
+        element: <ProductPage />,
       },
     ],
   },

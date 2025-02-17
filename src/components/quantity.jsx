@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "./button";
 import { Plus, Minus, Trash2 } from "lucide-react";
 
-const Quantity = ({ onClick }) => {
+const Quantity = ({ onClick, className }) => {
   const [count, setCount] = useState(0);
 
   const handleClick = () => {
@@ -11,9 +11,9 @@ const Quantity = ({ onClick }) => {
   };
 
   return (
-    <div className="flex w-fit gap-1">
+    <div className="flex w-full gap-1">
       <Button
-        className="border-border relative border"
+        className="border-border relative w-full border md:w-fit"
         onClick={() => setCount((prev) => Math.max(0, prev - 1))}
       >
         <Trash2
@@ -31,7 +31,10 @@ const Quantity = ({ onClick }) => {
         className="border-border w-12 cursor-pointer rounded-lg border px-3 py-2 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
       />
 
-      <Button className="border-border border" onClick={handleClick}>
+      <Button
+        className="border-border w-full border md:w-fit"
+        onClick={handleClick}
+      >
         <Plus className="h-[1.2rem] w-[1.2rem]" />
       </Button>
     </div>
