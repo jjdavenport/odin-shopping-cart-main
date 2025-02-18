@@ -1,10 +1,10 @@
 import Product from "../components/product";
 import useProducts from "../hooks/products-provider";
-import useToasts from "../hooks/toast-provider";
+import useCart from "../hooks/cart-provider";
 
 const Home = () => {
   const { data } = useProducts();
-  const { addToCart } = useToasts();
+  const { addToCart } = useCart();
   return (
     <>
       <div className="flex flex-col gap-4 p-4 md:grid md:grid-cols-2 lg:grid-cols-3">

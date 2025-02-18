@@ -19,7 +19,7 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="flex flex-1 gap-4 p-4">
+      <div className="flex flex-1 flex-col gap-4 p-4 md:flex-row">
         <div className="border-border flex flex-1 flex-col rounded-lg border p-3">
           <div className="flex items-center justify-between">
             <span>Shopping basket</span>
@@ -32,6 +32,8 @@ const Checkout = () => {
           </div>
           <div className="flex items-center gap-10">
             <Checkbox />
+            <img />
+            <span></span>
             <Quantity />
           </div>
         </div>

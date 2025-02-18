@@ -2,10 +2,10 @@ import { useLocation } from "react-router";
 import { Link } from "react-router";
 import Button from "../components/button";
 import Quantity from "../components/quantity";
-import useToasts from "../hooks/toast-provider";
+import useCart from "../hooks/cart-provider";
 
 const ProductPage = () => {
-  const { addToCart } = useToasts();
+  const { addToCart } = useCart();
   const location = useLocation();
   const product = location.state?.product;
 

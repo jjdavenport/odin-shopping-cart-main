@@ -1,8 +1,9 @@
 import { createContext, useState, useContext } from "react";
 
-const ToastContext = createContext();
+const CartContext = createContext();
 
-export const ToastProvider = ({ children }) => {
+export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
   const [toasts, setToasts] = useState([]);
 
   const addToCart = (img, title, price) => {
@@ -22,12 +23,14 @@ export const ToastProvider = ({ children }) => {
   };
 
   return (
-    <ToastContext.Provider value={{ toasts, addToCart, hideToast }}>
+    <CartContext.Provider
+      value={{ toasts, addToCart, hideToast, cart, setCart }}
+    >
       {children}
-    </ToastContext.Provider>
+    </CartContext.Provider>
   );
 };
 
-export const useToasts = () => useContext(ToastContext);
+export const useCart = () => useContext(CartContext);
 
-export default useToasts;
+export default useCart;

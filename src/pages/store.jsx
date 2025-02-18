@@ -1,10 +1,10 @@
 import Product from "../components/product";
 import useProducts from "../hooks/products-provider";
-import useToasts from "../hooks/toast-provider";
+import useCart from "../hooks/cart-provider";
 
 const Store = () => {
   const { data } = useProducts();
-  const { addToCart } = useToasts();
+  const { addToCart } = useCart();
 
   const category = data.category.filter("men's clothing");
 

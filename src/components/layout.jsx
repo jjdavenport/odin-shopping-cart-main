@@ -4,10 +4,10 @@ import Wrapper from "./wrapper";
 import Header from "./header";
 import Footer from "./footer";
 import Toast from "./toast";
-import useToasts from "../hooks/toast-provider";
+import useCart from "../hooks/cart-provider";
 
 const Layout = () => {
-  const { toasts, hideToast } = useToasts();
+  const { toasts, hideToast } = useCart();
 
   useEffect(() => {
     document.documentElement.classList.add(

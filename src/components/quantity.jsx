@@ -17,11 +17,11 @@ const Quantity = ({ onClick, className }) => {
         onClick={() => setCount((prev) => Math.max(0, prev - 1))}
       >
         <Trash2
-          className={`absolute inset-0 m-auto h-[1.2rem] w-[1.2rem] transition-all duration-300 ${count === 0 ? "scale-100 opacity-100" : "scale-0 opacity-0"} `}
+          className={`absolute inset-0 m-auto h-[1.2rem] w-[1.2rem] transition-all duration-300 ${count === 1 ? "scale-100 opacity-100" : "scale-0 opacity-0"} `}
         />
 
         <Minus
-          className={`h-[1.2rem] w-[1.2rem] transition-all duration-300 ${count > 0 ? "scale-100 opacity-100" : "scale-0 opacity-0"} `}
+          className={`h-[1.2rem] w-[1.2rem] transition-all duration-300 ${count > 1 ? "scale-100 opacity-100" : "scale-0 opacity-0"} `}
         />
       </Button>
       <input

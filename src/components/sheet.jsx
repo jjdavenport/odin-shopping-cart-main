@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import EmptySheet from "./empty-sheet";
 import SheetCart from "./sheet-cart";
+import useCart from "../hooks/cart-provider";
 
 const Sheet = ({ onClose }) => {
+  const { cart } = useCart();
   const [close, setClose] = useState(false);
 
   useEffect(() => {
@@ -31,7 +33,11 @@ const Sheet = ({ onClose }) => {
           close ? "animate-slide-out-right" : "animate-slide-in-right"
         }`}
       >
-        <SheetCart onClick={handleClose} />
+        {!cart.length > 0 ? (
+          <SheetCart onClick={handleClose} />
+        ) : (
+          <EmptySheet onClick={handleClose} />
+        )}
       </aside>
     </>
   );

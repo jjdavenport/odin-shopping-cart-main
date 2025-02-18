@@ -14,9 +14,9 @@ const Checkbox = () => {
         onClick={toggle}
         className={`${
           checked ? "bg-primary" : "hover:bg-border"
-        }  cursor-pointer transition-colors duration-200 ease-in-out size-5 flex justify-center items-center rounded-sm border border-primary`}
+        } border-primary flex aspect-square size-5 cursor-pointer items-center justify-center rounded-sm border transition-colors duration-200 ease-in-out`}
       >
-        {checked && <Check className="h-5 text-secondary" />}
+        {checked && <Check className="text-secondary h-5" />}
       </button>
     </>
   );

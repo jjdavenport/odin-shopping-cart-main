@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { X } from "lucide-react";
 import Button from "./button";
 
@@ -15,7 +14,7 @@ const EmptySheet = ({ onClick }) => {
             onClick={onClick}
             className="bg-foreground text-secondary hover:bg-secondary-foreground flex w-7/12 justify-center rounded-lg p-3"
           >
-            <Link to="/">Continue Shopping</Link>
+            Continue Shopping
           </Button>
         </div>
       </div>

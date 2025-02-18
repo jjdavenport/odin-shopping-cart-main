@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const useProducts = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
     try {

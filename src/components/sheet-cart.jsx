@@ -1,6 +1,5 @@
 import Button from "./button";
 import Separator from "./separator";
-import Quantity from "./quantity";
 import { X } from "lucide-react";
 import { Link } from "react-router";
 
@@ -18,9 +17,7 @@ const SheetCart = ({ onClick }) => {
         <span>Total</span>
       </div>
       <Separator className="bg-border" />
-      <div className="flex flex-1 flex-col">
-        <Quantity />
-      </div>
+      <div className="flex flex-1 flex-col"></div>
       <section className="flex flex-col gap-4 py-4">
         <Separator className="bg-border" />
         <div className="flex justify-between text-xl">

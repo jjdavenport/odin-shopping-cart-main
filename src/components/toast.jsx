@@ -20,7 +20,7 @@ const Toast = ({ onClose, i }) => {
       case "visible":
         return "translate-y-0 opacity-100";
       case "exiting":
-        return "translate-y-full md:translate-x-full opacity-0";
+        return "translate-y-full md:translate-y-0 md:translate-x-full opacity-0";
       default:
         return "";
     }

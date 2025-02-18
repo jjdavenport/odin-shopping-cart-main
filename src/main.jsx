@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { ToastProvider } from "./hooks/toast-provider";
+import { CartProvider } from "./hooks/cart-provider";
 import "./index.css";
 import Home from "./pages/home";
 import Store from "./pages/store";
@@ -36,8 +36,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ToastProvider>
+    <CartProvider>
       <RouterProvider router={router} />
-    </ToastProvider>
+    </CartProvider>
   </StrictMode>,
 );
