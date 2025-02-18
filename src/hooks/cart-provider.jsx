@@ -7,15 +7,26 @@ export const CartProvider = ({ children }) => {
   const [toasts, setToasts] = useState([]);
 
   const addToCart = (img, title, price) => {
-    setToasts((prev) => [
-      ...prev,
-      {
-        show: true,
-        image: img,
-        title: title,
-        price: price,
-      },
-    ]);
+    setCart(() => {
+      setToasts((prev) => [
+        ...prev,
+        {
+          quantity: 1,
+          show: true,
+          image: img,
+          title: title,
+          price: price,
+        },
+      ]);
+    });
+  };
+
+  const increment = () => {
+    setCart((prev) => ({ ...prev, quantity: prev + 1 }));
+  };
+
+  const decrement = () => {
+    setCart((prev) => ({ ...prev, quantity: prev - 1 }));
   };
 
   const hideToast = () => {

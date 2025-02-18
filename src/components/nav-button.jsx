@@ -39,10 +39,10 @@ const NavButton = ({ children }) => {
           <li className="w-full">
             <Link
               className="hover:bg-button flex w-full gap-1 rounded p-2"
-              to="/store/jewelry"
+              to="/store/jewelery"
             >
               <Gem className="h-5" />
-              Jewelry
+              Jewelery
             </Link>
           </li>
           <li className="w-full">
@@ -66,7 +66,7 @@ const NavButton = ({ children }) => {
           <li className="w-full">
             <Link
               className="hover:bg-button flex w-full gap-1 rounded p-2"
-              to="/store/womans&clothing"
+              to="/store/womens&clothing"
             >
               <Venus className="h-5" />
               Women's Clothing
