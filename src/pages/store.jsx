@@ -13,26 +13,22 @@ const Store = () => {
   if (category === "mens&clothing") category = "men's clothing";
   if (category === "womens&clothing") category = "women's clothing";
 
-  const filteredProducts = data.filter(
+  const categoryProducts = data.filter(
     (item) => item.category.toLowerCase() === category.toLowerCase(),
   );
 
   return (
     <div className="flex flex-col gap-4 p-4 md:grid md:grid-cols-2 lg:grid-cols-3">
-      {filteredProducts.length > 0 ? (
-        filteredProducts.map((i) => (
-          <Product
-            href={`/product/${i.id}`}
-            key={i.id}
-            img={i.image}
-            title={i.title}
-            price={i.price}
-            onClick={() => addToCart(i.image, i.title, i.price)}
-          />
-        ))
-      ) : (
-        <p>No products found in this category.</p>
-      )}
+      {categoryProducts.map((i) => (
+        <Product
+          href={`/product/${i.id}`}
+          key={i.id}
+          img={i.image}
+          title={i.title}
+          price={i.price}
+          onClick={() => addToCart(i.image, i.title, i.price)}
+        />
+      ))}
     </div>
   );
 };

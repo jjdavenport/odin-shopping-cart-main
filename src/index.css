@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "geist";
-  src: url(../font/Geist[wght].ttf);
+  src: url(/font/Geist[wght].ttf);
 }
 
 @layer base {

@@ -33,7 +33,7 @@ const Sheet = ({ onClose }) => {
           close ? "animate-slide-out-right" : "animate-slide-in-right"
         }`}
       >
-        {!cart.length > 0 ? (
+        {cart.length > 0 ? (
           <SheetCart onClick={handleClose} />
         ) : (
           <EmptySheet onClick={handleClose} />

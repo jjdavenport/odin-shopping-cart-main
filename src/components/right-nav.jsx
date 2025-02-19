@@ -27,7 +27,7 @@ const RightNav = () => {
         </Button>
         <Button className="border-border relative border" onClick={toggleSheet}>
           {cart.length > 0 && (
-            <span className="bg-primary text-secondary absolute -top-2 -right-3 rounded-lg px-2 font-semibold">
+            <span className="bg-primary text-secondary absolute -top-2 -right-3 rounded-lg px-2 text-sm font-semibold">
               {cart.length}
             </span>
           )}

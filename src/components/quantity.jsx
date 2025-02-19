@@ -2,8 +2,8 @@ import { useState } from "react";
 import Button from "./button";
 import { Plus, Minus, Trash2 } from "lucide-react";
 
-const Quantity = ({ onClick, className }) => {
-  const [count, setCount] = useState(0);
+const Quantity = ({ onClick }) => {
+  const [count, setCount] = useState(1);
 
   const handleClick = () => {
     setCount((prev) => prev + 1);
@@ -17,7 +17,7 @@ const Quantity = ({ onClick, className }) => {
         onClick={() => setCount((prev) => Math.max(0, prev - 1))}
       >
         <Trash2
-          className={`absolute inset-0 m-auto h-[1.2rem] w-[1.2rem] transition-all duration-300 ${count === 1 ? "scale-100 opacity-100" : "scale-0 opacity-0"} `}
+          className={`absolute inset-0 m-auto h-[1.2rem] w-[1.2rem] transition-all duration-300 ${count === 1 || count === 0 ? "scale-100 opacity-100" : "scale-0 opacity-0"} `}
         />
 
         <Minus

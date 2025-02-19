@@ -7,18 +7,25 @@ export const CartProvider = ({ children }) => {
   const [toasts, setToasts] = useState([]);
 
   const addToCart = (img, title, price) => {
-    setCart(() => {
-      setToasts((prev) => [
-        ...prev,
-        {
-          quantity: 1,
-          show: true,
-          image: img,
-          title: title,
-          price: price,
-        },
-      ]);
-    });
+    setCart((prev) => [
+      ...prev,
+      {
+        quantity: 1,
+        image: img,
+        title: title,
+        price: price,
+      },
+    ]);
+
+    setToasts((prev) => [
+      ...prev,
+      {
+        show: true,
+        image: img,
+        title: title,
+        price: price,
+      },
+    ]);
   };
 
   const increment = () => {
