@@ -1,37 +1,28 @@
 import { ChevronDown, Gem, CircuitBoard, Shirt, Venus } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
-import { useMediaQuery } from "react-responsive";
-import Button from "./button";
 
 const NavButton = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [hover, setHover] = useState(false);
+  const [canHover, setCanHover] = useState(false);
 
-  const desktop = useMediaQuery({ minWidth: 1024 });
+  useEffect(() => {
+    if (window.matchMedia("(hover: hover)").matches) {
+      setCanHover(true);
+    }
+  }, []);
 
   const toggle = () => {
-    setOpen(!open);
-  };
-
-  const close = () => {
-    setHover(false);
-    setOpen(false);
+    setOpen((prev) => !prev);
   };
 
   const handleMouseEnter = () => {
-    if (desktop) {
-      setHover(true);
-    }
+    if (canHover) setHover(true);
   };
 
   const handleMouseLeave = () => {
-    if (desktop) {
-      setHover(false);
-      if (!open) {
-        setOpen(false);
-      }
-    }
+    if (canHover) setHover(false);
   };
 
   return (
@@ -42,67 +33,65 @@ const NavButton = ({ children }) => {
     >
       <button
         onClick={toggle}
-        className={`${open && "bg-button"} ${
-          desktop ? "hover:bg-button" : ""
-        } group focus:bg-button relative flex cursor-pointer items-center gap-1 rounded-lg p-3 font-sans outline-none`}
+        className={`${open ? "bg-button" : ""} hover:bg-button group focus:bg-button relative flex cursor-pointer items-center gap-1 rounded-lg p-3 font-sans outline-none`}
       >
         {children}
         <ChevronDown
-          className={`${open ? "rotate-180" : ""} h-4 transition-all duration-300`}
+          className={`${open || hover ? "rotate-180" : ""} h-4 transition-all duration-300`}
         />
       </button>
       <div className="absolute top-full h-4 w-full" />
       <div
         className={`bg-background border-border absolute top-[calc(100%+1rem)] left-1/2 z-10 w-52 origin-top -translate-x-1/2 transform rounded-lg border p-3 transition-all duration-100 ${
-          open || (hover && desktop)
+          open || hover
             ? "visible scale-100 opacity-100"
             : "invisible scale-75 opacity-0"
         }`}
       >
         <ul className="flex flex-col gap-1">
           <li className="w-full">
-            <button
-              onClick={close}
+            <Link
               className="hover:bg-button flex w-full justify-start rounded-lg p-2"
+              to="/store/jewelery"
             >
-              <Link className="flex w-full gap-1" to="/store/jewelery">
+              <span className="flex w-full gap-1">
                 <Gem className="h-5" />
                 Jewelery
-              </Link>
-            </button>
+              </span>
+            </Link>
           </li>
           <li className="w-full">
-            <button
-              onClick={close}
+            <Link
               className="hover:bg-button flex w-full justify-start rounded-lg p-2"
+              to="/store/electronics"
             >
-              <Link className="flex w-full gap-1" to="/store/electronics">
+              <span className="flex w-full gap-1">
                 <CircuitBoard className="h-5" />
                 Electronics
-              </Link>
-            </button>
+              </span>
+            </Link>
           </li>
           <li className="w-full">
-            <button
-              onClick={close}
+            <Link
               className="hover:bg-button flex w-full justify-start rounded-lg p-2"
+              to="/store/mens&clothing"
             >
-              <Link className="flex w-full gap-1" to="/store/mens&clothing">
+              <span className="flex w-full gap-1">
                 <Shirt className="h-5" />
                 Men's Clothing
-              </Link>
-            </button>
+              </span>
+            </Link>
           </li>
           <li className="w-full">
-            <button
-              onClick={close}
+            <Link
               className="hover:bg-button flex w-full justify-start rounded-lg p-2"
+              to="/store/womens&clothing"
             >
-              <Link className="flex w-full gap-1" to="/store/womens&clothing">
+              <span className="flex w-full gap-1">
                 <Venus className="h-5" />
                 Women's Clothing
-              </Link>
-            </button>
+              </span>
+            </Link>
           </li>
         </ul>
       </div>

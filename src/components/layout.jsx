@@ -23,8 +23,8 @@ const Layout = () => {
         <Header />
         <main className="flex flex-1 flex-col">
           <Outlet />
-          {toasts.map((i) => (
-            <Toast key={i.id} i={i} onClose={hideToast} />
+          {toasts.map((i, index) => (
+            <Toast key={index} i={i} onClose={hideToast} />
           ))}
         </main>
         <Footer />

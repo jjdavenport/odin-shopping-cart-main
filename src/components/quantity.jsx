@@ -11,7 +11,7 @@ const Quantity = ({ onClick }) => {
   };
 
   return (
-    <div className="flex w-full gap-1">
+    <div className="flex h-fit w-full gap-1 md:w-fit">
       <Button
         className="border-border relative w-full border md:w-fit"
         onClick={() => setCount((prev) => Math.max(0, prev - 1))}

@@ -17,7 +17,7 @@ const Home = () => {
               title={i.title}
               price={i.price}
               state={{ product: i }}
-              onClick={() => addToCart(i.image, i.title, i.price)}
+              onClick={() => addToCart(i.id, i.image, i.title, i.price)}
             />
           ))}
       </div>

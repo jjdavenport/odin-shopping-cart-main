@@ -26,7 +26,7 @@ const Store = () => {
           img={i.image}
           title={i.title}
           price={i.price}
-          onClick={() => addToCart(i.image, i.title, i.price)}
+          onClick={() => addToCart(i.id, i.image, i.title, i.price)}
         />
       ))}
     </div>

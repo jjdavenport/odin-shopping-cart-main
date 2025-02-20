@@ -6,10 +6,11 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [toasts, setToasts] = useState([]);
 
-  const addToCart = (img, title, price) => {
+  const addToCart = (id, img, title, price) => {
     setCart((prev) => [
       ...prev,
       {
+        id: id,
         quantity: 1,
         image: img,
         title: title,
@@ -41,9 +42,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider
-      value={{ toasts, addToCart, hideToast, cart, setCart }}
-    >
+    <CartContext.Provider value={{ toasts, addToCart, hideToast, cart }}>
       {children}
     </CartContext.Provider>
   );

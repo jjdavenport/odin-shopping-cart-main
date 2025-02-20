@@ -1,9 +1,10 @@
-import Button from "./button";
-import Separator from "./separator";
 import { X } from "lucide-react";
 import { Link } from "react-router";
+import SheetItem from "./sheet-item";
+import Button from "./button";
+import Separator from "./separator";
 
-const SheetCart = ({ onClick }) => {
+const SheetCart = ({ onClick, cart }) => {
   return (
     <>
       <div className="flex items-center justify-between">
@@ -17,7 +18,19 @@ const SheetCart = ({ onClick }) => {
         <span>Total</span>
       </div>
       <Separator className="bg-border" />
-      <div className="flex flex-1 flex-col"></div>
+      <div className="flex flex-1 flex-col gap-2">
+        {cart.map((i) => (
+          <SheetItem
+            price={i.price}
+            img={i.image}
+            onClick={onClick}
+            key={i.id}
+            id={i.id}
+            title={i.title}
+            quantity={i.quantity}
+          />
+        ))}
+      </div>
       <section className="flex flex-col gap-4 py-4">
         <Separator className="bg-border" />
         <div className="flex justify-between text-xl">

@@ -20,12 +20,14 @@ const Product = ({ img, title, price, href, onClick, state }) => {
             </Link>
           </div>
           <div className="bg-background flex items-center gap-2">
-            <Link
-              to="/checkout"
-              className="bg-secondary-foreground text-secondary flex w-full justify-center rounded-lg p-3"
+            <button
+              onClick={onClick}
+              className="bg-secondary-foreground text-secondary flex w-full justify-center rounded-lg"
             >
-              Buy it now
-            </Link>
+              <Link className="w-full p-3" to="/checkout">
+                Buy it now
+              </Link>
+            </button>
             <Button onClick={onClick} className="border-border w-full border">
               Add to cart
             </Button>

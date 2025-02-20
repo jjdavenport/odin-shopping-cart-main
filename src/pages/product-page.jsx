@@ -32,15 +32,29 @@ const ProductPage = () => {
           <span className="text-xl">${product.price}</span>
           <Quantity className="w-full" />
           <div className="flex flex-col gap-4 lg:flex-row">
-            <Link
-              to="/checkout"
+            <button
+              onClick={() =>
+                addToCart(
+                  product.id,
+                  product.image,
+                  product.title,
+                  product.price,
+                )
+              }
               className="bg-secondary-foreground text-secondary flex w-full justify-center rounded-lg p-3"
             >
-              Buy it now
-            </Link>
+              <Link className="w-full" to="/checkout">
+                Buy it now
+              </Link>
+            </button>
             <Button
               onClick={() =>
-                addToCart(product.image, product.title, product.price)
+                addToCart(
+                  product.id,
+                  product.image,
+                  product.title,
+                  product.price,
+                )
               }
               className="border-border w-full border"
             >

@@ -29,12 +29,12 @@ const Sheet = ({ onClose }) => {
         onClick={handleClose}
       ></div>
       <aside
-        className={`border-border bg-background fixed top-0 right-0 z-50 flex h-screen w-full flex-col gap-2 border-l p-3 md:w-5/12 ${
+        className={`border-border bg-background fixed top-0 right-0 z-50 flex h-screen w-full flex-col gap-2 border-l p-3 md:w-6/12 lg:w-5/12 ${
           close ? "animate-slide-out-right" : "animate-slide-in-right"
         }`}
       >
         {cart.length > 0 ? (
-          <SheetCart onClick={handleClose} />
+          <SheetCart cart={cart} onClick={handleClose} />
         ) : (
           <EmptySheet onClick={handleClose} />
         )}
