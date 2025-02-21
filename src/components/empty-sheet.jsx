@@ -4,7 +4,7 @@ import Button from "./button";
 const EmptySheet = ({ onClick }) => {
   return (
     <>
-      <div className="flex flex-1 flex-col items-end gap-1">
+      <div className="flex flex-1 flex-col items-end gap-1 p-3">
         <Button onClick={onClick}>
           <X />
         </Button>

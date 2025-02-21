@@ -3,7 +3,7 @@ import Separator from "./separator";
 import Button from "./button";
 import Dialog from "../components/dialog";
 
-const CheckoutSummary = () => {
+const CheckoutSummary = ({ total }) => {
   const [showDialog, setShowDialog] = useState(false);
 
   const show = (setter) => () => {
@@ -19,7 +19,10 @@ const CheckoutSummary = () => {
         <span>Order Summary</span>
         <span>Subtotal</span>
         <Separator className="bg-border" />
-        <span>Total</span>
+        <div className="flex justify-between">
+          <span>Total</span>
+          <span>${total}</span>
+        </div>
         <Button
           className="bg-foreground text-secondary hover:bg-secondary-foreground cursor-pointer rounded-lg p-3"
           onClick={show(setShowDialog)}

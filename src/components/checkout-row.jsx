@@ -1,22 +1,15 @@
-import { useState } from "react";
 import { Link } from "react-router";
 import Checkbox from "./checkbox";
 import Quantity from "./quantity";
 
-const CheckoutRow = ({ selectAll, title, price, id }) => {
-  const [checked, setChecked] = useState(false);
-
-  const toggle = () => {
-    setChecked(!checked);
-  };
-
+const CheckoutRow = ({ select, title, price, id, toggle }) => {
   return (
     <>
-      <tr className={`${selectAll && "bg-button"} `}>
-        <td className="p-4">
-          <Checkbox checked={selectAll} onClick={toggle} />
+      <tr className={`${select && "bg-button"}`}>
+        <td className="hidden items-center justify-center p-4 md:table-cell">
+          <Checkbox checked={select} onClick={toggle} />
         </td>
-        <td className="p-4 text-sm md:text-base">
+        <td className="p-4 text-xs md:text-base">
           <Link to={`/product/${id}`}>{title}</Link>
         </td>
         <td className="p-4">
@@ -24,7 +17,7 @@ const CheckoutRow = ({ selectAll, title, price, id }) => {
             <Quantity />
           </div>
         </td>
-        <td className="p-4 text-right text-sm md:text-base">
+        <td className="p-4 text-right text-xs md:text-base">
           ${price.toFixed(2)}
         </td>
         <td></td>
